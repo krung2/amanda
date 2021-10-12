@@ -1,4 +1,3 @@
-import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
 
