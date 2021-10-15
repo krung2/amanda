@@ -26,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(19, 24, 44, 0);
+    font-family: Noto Sans CJK KR Midium;
   }
 
   h2, h3, h4 {
