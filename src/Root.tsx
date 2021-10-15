@@ -5,6 +5,7 @@ import * as G from './styles/golobal.style';
 import GlobalFontFace from './styles/font.style';
 import UserCardComponent from './components/userCard/userCard.component';
 import HeaderComponent from './components/common/header/Header.component';
+import SelectComponent from './components/common/select/Select.component';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <GlobalFontFace />
         {/* <TestComponent /> */}
         <HeaderComponent />
-        <UserCardComponent />
+        {/* <UserCardComponent /> */}
+        {/* <SelectComponent /> */}
       </BrowserRouter>
     </RecoilRoot>
   );
