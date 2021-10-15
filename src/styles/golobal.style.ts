@@ -5,14 +5,15 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  #root {
+ }
+
   div {
     display: block;
   }
 
   body {
-    width: 100%;
     min-height: 100vh;
-    color: #5e676f;
     background: inherit;
     margin: 0;
     font-size: .875rem;
@@ -20,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.4285714286;
     color: #212529;
     text-align: left;
-    background: #f9f9fa;
+    background: #ffffff;
   }
 
   html {
