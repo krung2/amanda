@@ -14,14 +14,16 @@ margin-left: 15vw;
 `
 
 export const LogoName = styled.div`
-/* margin-top: 1rem; */
 font-size: 1.2rem;
 color: #2B6BDB;
+font-family: Gmarket Sans TTF;
 `
 
 export const SiteMent = styled.div`
 color: #747474;
 font-size: 1.3rem;
+font-family: Gmarket Sans TTF;
+line-height: 39px
 `
 
 export const PointMent = styled.span`
@@ -65,14 +67,14 @@ border-collapse: collapse;
 box-sizing: border-box;
 color: ${(props) => (props.school ? 'white' : '#E7E7E7')};
 background-color: ${(props) => (props.school && '#5187E7')};
-/* padding: 0 auto; */
 margin: 0 auto;
+cursor: pointer;
 `
 
 export const PositionSelect = styled.div`
 width: 180px;
 height: 50px;
-margin-top: 39px;
+margin-top: 2.5rem;
 border: 1px solid #F3F3F3;
 box-sizing: border - box;
 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);

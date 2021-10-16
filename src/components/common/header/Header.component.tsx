@@ -1,12 +1,12 @@
 import React from "react";
-import SelectHooks from "../../../hooks/select.hooks";
+import headerHooks from "../../../hooks/header.hooks";
 import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import SelectComponent from "../select/Select.component";
 import * as S from './styles';
 
 const HeaderComponent: React.FC = () => {
 
-  const { school } = SelectHooks();
+  const { school, setSchool } = headerHooks();
 
   return (
     <S.Header>
@@ -26,13 +26,22 @@ const HeaderComponent: React.FC = () => {
       </S.HeaderFrame>
       <S.SchoolContainer>
         <S.SchoolBox>
-          <S.SchoolName school={school === SchoolConstant.GWANGJU}>
+          <S.SchoolName
+            school={school === SchoolConstant.GWANGJU}
+            onClick={() => setSchool(SchoolConstant.GWANGJU)}
+          >
             광주
           </S.SchoolName>
-          <S.SchoolName school={school === SchoolConstant.DAEGU}>
+          <S.SchoolName
+            school={school === SchoolConstant.DAEGU}
+            onClick={() => setSchool(SchoolConstant.DAEGU)}
+          >
             대구
           </S.SchoolName>
-          <S.SchoolName school={school === SchoolConstant.DAEDEOK}>
+          <S.SchoolName
+            school={school === SchoolConstant.DAEDEOK}
+            onClick={() => setSchool(SchoolConstant.DAEDEOK)}
+          >
             대덕
           </S.SchoolName>
         </S.SchoolBox>
