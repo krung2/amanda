@@ -9,6 +9,7 @@ border: 1px solid #F3F3F3;
 box-sizing: border-box;
 filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.2));
 border-radius: 10px;
+z-index: -1;
 `
 
 export const UserInfoContainer = styled.div`

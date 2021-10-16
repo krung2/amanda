@@ -27,6 +27,7 @@ color: ${(props) => (props.position ? 'white' : '191919')};
 font-size: 18px;
 font-style: normal;
 font-weight: normal;
+z-index:1;
 
 &:first-child {
   border-top-left-radius: 10px;
