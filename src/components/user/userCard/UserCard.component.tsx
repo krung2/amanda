@@ -1,5 +1,6 @@
 import React from "react";
 import * as S from './styles';
+import phone from '../../../assets/img/phone.svg';
 
 const UserCardComponent: React.FC = () => {
 
@@ -31,6 +32,17 @@ const UserCardComponent: React.FC = () => {
           </S.UserGithub>
         </S.UserInfo>
       </S.UserInfoContainer>
+      <S.TeamContainer>
+        <S.TeamIntro>
+          안뇽, 우리는 팀
+        </S.TeamIntro>
+        <S.TeamContactContainer>
+          <S.TeamContactImg src={phone} />
+          <S.TeamContact>
+            01023954337
+          </S.TeamContact>
+        </S.TeamContactContainer>
+      </S.TeamContainer>
     </S.CardContainer >
   )
 }
