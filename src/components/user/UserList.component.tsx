@@ -9,6 +9,11 @@ const UserListComponent: React.FC = () => {
       <UserCardComponent />
       <UserCardComponent />
       <UserCardComponent />
+      <UserCardComponent />
+      <UserCardComponent />
+      <UserCardComponent />
+      <UserCardComponent />
+      <UserCardComponent />
     </S.CardsContainer >
   )
 }

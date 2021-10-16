@@ -6,5 +6,6 @@ flex-wrap: wrap;
 width: 75vw;
 margin-left: 12.5vw;
 padding: 20px 0 20px 0;
-justify-content: space-between;
+/* gap: 30px; */
+gap: .75vw;
 `
