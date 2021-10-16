@@ -1,7 +1,7 @@
 import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
 import * as G from './styles/golobal.style';
-import GlobalFontFace from './styles/font.style';
+import './styles/font.style.css';
 import HeaderComponent from './components/common/header/Header.component';
 import UserListComponent from './components/user/UserList.component';
 
@@ -10,7 +10,6 @@ function App() {
     <RecoilRoot>
       <BrowserRouter>
         <G.GlobalStyle />
-        <GlobalFontFace />
         <HeaderComponent />
         <UserListComponent />
       </BrowserRouter>

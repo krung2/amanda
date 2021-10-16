@@ -16,7 +16,7 @@ margin-left: 12.5vw;
 export const LogoName = styled.div`
 font-size: 1.2rem;
 color: #2B6BDB;
-font-family: Gmarket Sans TTF;
+font-family: Gmarket Sans;
 `
 
 export const SiteMent = styled.div`
