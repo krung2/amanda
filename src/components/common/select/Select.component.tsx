@@ -1,23 +1,23 @@
 import React, { RefObject, useCallback, useEffect, useRef } from "react";
-import selectHooks from "../../../hooks/select.hooks";
 import ReverseTriangle from '../../../assets/img/Polygon 1.svg';
 import * as S from './styles';
+import selectHooks from "../../../hooks/select.hooks";
+import { Position } from "../../../libs/constants/position";
 
 const SelectComponent: React.FC = () => {
 
-  const { isSelectOpen, setIsSelectOpen, openModal } = selectHooks();
+  const { isSelectOpen, closeModal, openModal, position, modalClicked } = selectHooks();
 
   const inputRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = useCallback(
     (e: MouseEvent): void => {
       if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
-        setIsSelectOpen(false);
+        closeModal();
       }
     },
     [inputRef]
   );
-
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -26,6 +26,18 @@ const SelectComponent: React.FC = () => {
     };
   }, []);
 
+  const selectOptionContent: JSX.Element[] = Object.values(Position)
+    .map(value => {
+      return (
+        <S.ModalContent
+          key={value}
+          position={value === position}
+          onClick={() => modalClicked(value)}
+        >
+          {value}
+        </S.ModalContent>
+      )
+    });
 
   return (
     <S.Container>
@@ -33,19 +45,13 @@ const SelectComponent: React.FC = () => {
         isSelectOpen ?
           <S.OpenContainer ref={inputRef} >
             <S.OpenContent>
-              <S.ModalContent>a</S.ModalContent>
-              <S.ModalContent>s</S.ModalContent>
-              <S.ModalContent>d</S.ModalContent>
-              <S.ModalContent>f</S.ModalContent>
-              <S.ModalContent>q</S.ModalContent>
+              {selectOptionContent}
             </S.OpenContent>
           </S.OpenContainer >
           : <S.ClosedContainer onClick={() => openModal()}>
-            <S.FlexBlank />
             <S.DisplayFlex>
-              무야홍 &nbsp; <S.Triangle src={ReverseTriangle} />
+              {position} &nbsp; <S.Triangle src={ReverseTriangle} />
             </S.DisplayFlex>
-            <S.FlexBlank />
           </S.ClosedContainer>
       }
     </S.Container>

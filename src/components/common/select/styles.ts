@@ -14,14 +14,19 @@ export const OpenContent = styled.div`
 position: absolute;
 `
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.div<{ position: boolean }>`
+display: flex;
+align-items: center;
+justify-content: center;
 width: 182px;
 height: 50px;
 border: 1px solid #F3F3F3;
 border-bottom: 0px;
-background-color: white;
-text-align: center;
-vertical-align: middle;
+background-color: ${(props) => (props.position ? '#6292E7' : 'white')};
+color: ${(props) => (props.position ? 'white' : '191919')};
+font-size: 18px;
+font-style: normal;
+font-weight: normal;
 
 &:first-child {
   border-top-left-radius: 10px;
@@ -46,7 +51,7 @@ border-radius: 10px;
 appearance: none;
 background-color: white;
 align-items: center;
-justify-items: center;
+justify-content: center;
 `
 
 export const FlexBlank = styled.span`
@@ -57,9 +62,8 @@ flex: 1 1 auto;
 export const DisplayFlex = styled.span`
 display: flex;
 align-items:center;
-justify-items: center;
-font-size: 18px;
-font-size: 1.3rem;
+justify-content: center;
+font-size: 1.3em;
 color: #6292E7;
 `
 

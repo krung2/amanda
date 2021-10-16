@@ -1,20 +1,25 @@
 import { useState } from "react";
-import { SchoolConstant } from "../libs/constants/schoolConstant";
-import { TeamProfile } from "../libs/constants/teamProfile";
+import { Position } from "../libs/constants/position";
 
 const SelectHooks = () => {
 
   const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false);
-  const [school, setSchool] = useState<number>(SchoolConstant.GWANGJU);
+  const [position, setPosition] = useState<Position>(Position.ALL);
 
   const openModal = () => setIsSelectOpen(true);
+  const closeModal = () => setIsSelectOpen(false);
+
+  const modalClicked = (value: Position) => {
+    setPosition(value);
+    closeModal();
+  }
 
   return {
     isSelectOpen,
-    setIsSelectOpen,
-    school,
-    setSchool,
-    openModal
+    openModal,
+    closeModal,
+    position,
+    modalClicked,
   }
 }
 
