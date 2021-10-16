@@ -8,9 +8,9 @@ justify-content: center;
 `
 
 export const HeaderFrame = styled.div`
-width: 70vw;
+width: 75vw;
 top: 0;
-margin-left: 15vw;
+margin-left: 12.5vw;
 `
 
 export const LogoName = styled.div`
@@ -47,9 +47,9 @@ border-collapse: collapse;
 
 export const SchoolBox = styled.div`
 display: flex;
-width: 70vw;
+width: 75vw;
 height: 100%;
-margin-left: 15vw;
+margin-left: 12.5vw;
 `
 
 export const FlexBlank = styled.span`

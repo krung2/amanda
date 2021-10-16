@@ -1,11 +1,9 @@
 import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
-import TestComponent from './components/test.component';
 import * as G from './styles/golobal.style';
 import GlobalFontFace from './styles/font.style';
-import UserCardComponent from './components/userCard/userCard.component';
 import HeaderComponent from './components/common/header/Header.component';
-import SelectComponent from './components/common/select/Select.component';
+import UserListComponent from './components/user/UserList.component';
 
 function App() {
   return (
@@ -13,10 +11,8 @@ function App() {
       <BrowserRouter>
         <G.GlobalStyle />
         <GlobalFontFace />
-        {/* <TestComponent /> */}
         <HeaderComponent />
-        {/* <UserCardComponent /> */}
-        {/* <SelectComponent /> */}
+        <UserListComponent />
       </BrowserRouter>
     </RecoilRoot>
   );
