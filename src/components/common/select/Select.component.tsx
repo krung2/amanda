@@ -16,7 +16,7 @@ const SelectComponent: React.FC = () => {
         closeModal();
       }
     },
-    [inputRef]
+    [inputRef, closeModal]
   );
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const SelectComponent: React.FC = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   const selectOptionContent: JSX.Element[] = Object.values(Position)
     .map(value => {
