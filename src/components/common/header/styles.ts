@@ -57,21 +57,16 @@ flex: 1 1 auto;
 
 export const SchoolName = styled(FlexBlank) <{ school: boolean }>`
 display: flex;
-justify-items: center;
+justify-content: center;
 align-items: center;
-text-align: center;
 font-size: 1.5rem;
-/* border: 1px solid #F3F3F3; */
 border: 1px solid ${(props) => (props.school ? '#5187E7' : '#F3F3F3')};
 border-collapse: collapse;
 box-sizing: border-box;
 color: ${(props) => (props.school ? 'white' : '#E7E7E7')};
 background-color: ${(props) => (props.school && '#5187E7')};
-
-/* 
-&:first-child {
-  border-left: ${(props) => (!props.school && '1px solid #F3F3F3')};
-}; */
+/* padding: 0 auto; */
+margin: 0 auto;
 `
 
 export const PositionSelect = styled.div`

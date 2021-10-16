@@ -27,19 +27,13 @@ const HeaderComponent: React.FC = () => {
       <S.SchoolContainer>
         <S.SchoolBox>
           <S.SchoolName school={school === SchoolConstant.GWANGJU}>
-            <S.FlexBlank />
             광주
-            <S.FlexBlank />
           </S.SchoolName>
           <S.SchoolName school={school === SchoolConstant.DAEGU}>
-            <S.FlexBlank />
             대구
-            <S.FlexBlank />
           </S.SchoolName>
           <S.SchoolName school={school === SchoolConstant.DAEDEOK}>
-            <S.FlexBlank />
             대덕
-            <S.FlexBlank />
           </S.SchoolName>
         </S.SchoolBox>
       </S.SchoolContainer>
