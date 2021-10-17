@@ -81,7 +81,7 @@ background: rgba(81, 135, 231, 0.1);
 border-radius: 30px;
 `
 
-export const TeamContactImg = styled.img`
+export const TeamContactImg = styled.embed`
 `
 
 export const TeamContact = styled.div`

@@ -1,7 +1,10 @@
 import React from "react";
 import * as S from './styles';
-import phone from '../../../assets/img/phone.svg';
+import instagram from '../../../assets/img/instagram.svg';
+import discord from '../../../assets/img/discord.svg';
 import { ISchoolData } from "../../../libs/interfaces/IUserData";
+import { ContentTypes } from "../../../libs/constants/contactTypes";
+import kakao from '../../../assets/img/kakao.svg';
 
 const UserCardComponent = (
   { cardInfo }: { cardInfo: ISchoolData }
@@ -55,7 +58,9 @@ const UserCardComponent = (
           {intro}
         </S.TeamIntro>
         <S.TeamContactContainer>
-          <S.TeamContactImg src={phone} />
+          {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={discord} />}
+          {contactType === ContentTypes.INSTAGRAM && <S.TeamContactImg src={instagram} />}
+          {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={kakao} />}
           <S.TeamContact>
             {contact}
           </S.TeamContact>
