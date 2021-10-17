@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
-import { GoogleApi } from "./constants/googleAPi";
+import config from '../config/config.json';
 
 export const sheetsAxios: AxiosInstance = axios.create({
-  baseURL: GoogleApi.SHEETS,
+  baseURL: config.server,
 });
