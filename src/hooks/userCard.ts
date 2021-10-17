@@ -1,21 +1,25 @@
 import { useState } from "react";
-import { getAllExcelData } from "../libs/apis/getExcelData";
+import { getDaedeokData, getDaeguData, getGwangjuData } from "../libs/apis/getData";
 import { SchoolConstant } from "../libs/constants/schoolConstant";
-import { IResProfileData } from "../libs/interfaces/IExcelData";
-import { checkNullOrUndefindArray } from "../utils/checkNullOrUndefind";
+import { ISchoolData } from "../libs/interfaces/IUserData";
 
 const UserCard = () => {
 
-  const [dague, setDaegue] = useState<string[][]>([]);
-  const [daedeok, setDaedeok] = useState<string[][]>([]);
-  const [gwangju, setGwangju] = useState<string[][]>([]);
+  const [dague, setDaegue] = useState<ISchoolData[]>([]);
+  const [daedeok, setDaedeok] = useState<ISchoolData[]>([]);
+  const [gwangju, setGwangju] = useState<ISchoolData[]>([]);
 
   const userList = async () => {
     try {
-      const data: IResProfileData = await getAllExcelData();
-      setDaegue(checkNullOrUndefindArray<string[][]>(data.valueRanges[SchoolConstant.DAEGU].values));
-      setDaedeok(checkNullOrUndefindArray<string[][]>(data.valueRanges[SchoolConstant.DAEDEOK].values));
-      setGwangju(checkNullOrUndefindArray<string[][]>(data.valueRanges[SchoolConstant.GWANGJU].values));
+      const studentDatas: ISchoolData[][] = await Promise.all([
+        getDaeguData(),
+        getDaedeokData(),
+        getGwangjuData(),
+      ]);
+
+      setDaegue(studentDatas[SchoolConstant.DAEGU]);
+      setDaedeok(studentDatas[SchoolConstant.DAEDEOK]);
+      setGwangju(studentDatas[SchoolConstant.GWANGJU]);
     } catch (err) { }
   }
 

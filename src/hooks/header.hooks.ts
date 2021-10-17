@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { SchoolConstant } from "../libs/constants/schoolConstant";
+import { useRecoilState } from "recoil";
+import { schoolState } from "./atoms/header.atom";
 
 const HeaderHooks = () => {
 
-  const [school, setSchool] = useState<number>(SchoolConstant.GWANGJU);
+  const [school, setSchool] = useRecoilState(schoolState);
 
   return {
     school,
