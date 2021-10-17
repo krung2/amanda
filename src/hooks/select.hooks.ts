@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useRecoilState } from "recoil";
 import { Position } from "../libs/constants/position";
+import { positionState } from "./atoms/select.atom";
 
 const SelectHooks = () => {
 
   const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false);
-  const [position, setPosition] = useState<Position>(Position.ALL);
+  const [position, setPosition] = useRecoilState(positionState);
 
   const openModal = () => setIsSelectOpen(true);
   const closeModal = () => setIsSelectOpen(false);
