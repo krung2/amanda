@@ -1,8 +1,26 @@
 import React from "react";
 import * as S from './styles';
 import phone from '../../../assets/img/phone.svg';
+import { ISchoolData } from "../../../libs/interfaces/IUserData";
 
-const UserCardComponent: React.FC = () => {
+const UserCardComponent = (
+  { cardInfo }: { cardInfo: ISchoolData }
+): JSX.Element => {
+
+  const {
+    name1,
+    name2,
+    github1,
+    github2,
+    position1,
+    position2,
+    intro,
+    contactType,
+    contact,
+    daeguTeam,
+    gwangjuTeam,
+    deadeokTeam
+  } = cardInfo;
 
   return (
     <S.CardContainer>
@@ -10,36 +28,36 @@ const UserCardComponent: React.FC = () => {
         <S.UserInfo>
           <S.UserInfoBox>
             <S.UserPosition>
-              백엔드
+              {position1}
             </S.UserPosition>
             <S.UserName>
-              신중빈
+              {name1}
             </S.UserName>
-            <S.UserGithub onClick={() => window.open(`https://github.com/krung2`)}>
-              kurng2
+            <S.UserGithub onClick={() => window.open(`https://github.com/${github1}`)}>
+              {github1}
             </S.UserGithub>
           </S.UserInfoBox>
         </S.UserInfo>
         <S.UserInfo>
           <S.UserPosition>
-            프론트엔드
+            {position2}
           </S.UserPosition>
           <S.UserName>
-            손민재
+            {name2}
           </S.UserName>
-          <S.UserGithub onClick={() => window.open(`https://github.com/Clzzi`)}>
-            Clzzi
+          <S.UserGithub onClick={() => window.open(`https://github.com/${github2}`)}>
+            {github2}
           </S.UserGithub>
         </S.UserInfo>
       </S.UserInfoContainer>
       <S.TeamContainer>
         <S.TeamIntro>
-          안뇽, 우리는 팀
+          {intro}
         </S.TeamIntro>
         <S.TeamContactContainer>
           <S.TeamContactImg src={phone} />
           <S.TeamContact>
-            01023954337
+            {contact}
           </S.TeamContact>
         </S.TeamContactContainer>
       </S.TeamContainer>
