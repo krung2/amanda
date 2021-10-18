@@ -33,7 +33,7 @@ const UserCardComponent = (
     contact,
     daeguTeam,
     gwangjuTeam,
-    deadoekTeam
+    daedoekTeam
   } = cardInfo;
 
   const checkKakaoType = (): string => {
@@ -93,7 +93,7 @@ const UserCardComponent = (
           <S.CheckBoxs>
             <S.GwangjuCheckBox teamCheck={checkSchoolType(gwangjuTeam)} />
             <S.DaeguCheckBox teamCheck={checkSchoolType(daeguTeam)} />
-            <S.DaedeokCheckBox teamCheck={checkSchoolType(deadoekTeam)} />
+            <S.DaedeokCheckBox teamCheck={checkSchoolType(daedoekTeam)} />
           </S.CheckBoxs>
         </S.SchoolCheckBox>
       </S.UserInfoContainer>

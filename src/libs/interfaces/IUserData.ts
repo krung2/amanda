@@ -11,5 +11,5 @@ export interface ISchoolData {
   contact: string;
   daeguTeam?: boolean;
   gwangjuTeam?: boolean;
-  deadoekTeam?: boolean;
+  daedoekTeam?: boolean;
 };
