@@ -23,7 +23,7 @@ height: 50px;
 border: 1px solid #F3F3F3;
 border-bottom: 0px;
 background-color: ${(props) => (props.position ? '#6292E7' : 'white')};
-color: ${(props) => (props.position ? 'white' : '191919')};
+color: ${(props) => (props.position ? 'white' : '#191919')};
 font-size: 18px;
 font-style: normal;
 font-weight: normal;

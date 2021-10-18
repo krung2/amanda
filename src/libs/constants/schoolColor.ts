@@ -1,0 +1,14 @@
+export enum SchoolColor {
+  GWANGJU_FONT = '#2B6BDB',
+  GWANGJU_SELECT = 'rgba(81, 135, 231, 0.86)',
+  GWANGJU_BACK = '#5187E7',
+  GWANGJU_CONTACT = 'rgba(81, 135, 231, 0.1)',
+  DAEGU_FONT = '#009843',
+  DAEGU_SELECT = 'rgba(22, 162, 84, 0.86)',
+  DAEGU_BACK = '#16A254',
+  DAEGU_CONTACT = 'rgba(22, 162, 84, 0.1)',
+  DAEDEOK_FONT = '#FD8F04',
+  DAEDEOK_SELECT = '#F99E2B',
+  DAEDEOK_BACK = '#F99E2B',
+  DAEDEOK_CONTACT = 'rgba(249, 158, 43, 0.1)',
+}

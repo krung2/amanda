@@ -75,15 +75,20 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 padding: 4px 22px;
-width: 181px;
+width: 195px;
 height: 32px;
 background: rgba(81, 135, 231, 0.1);
 border-radius: 30px;
 `
 
 export const TeamContactImg = styled.embed`
+width: 20px;
+height: 20px;
 `
 
 export const TeamContact = styled.div`
+font-size: 18px;
+color: #2B6BDB;
 margin-left: 4px;
+line-height: 27px;
 `
