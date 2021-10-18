@@ -60,7 +60,7 @@ const UserCardComponent = (
       <S.UserInfoContainer>
         <S.UserInfo>
           <S.UserInfoBox>
-            <S.UserPosition>
+            <S.UserPosition school={school}>
               {position1}
             </S.UserPosition>
             <S.UserName>
@@ -72,7 +72,7 @@ const UserCardComponent = (
           </S.UserInfoBox>
         </S.UserInfo>
         <S.UserInfo>
-          <S.UserPosition>
+          <S.UserPosition school={school}>
             {position2}
           </S.UserPosition>
           <S.UserName>
@@ -87,11 +87,11 @@ const UserCardComponent = (
         <S.TeamIntro>
           {intro}
         </S.TeamIntro>
-        <S.TeamContactContainer>
+        <S.TeamContactContainer school={school}>
           {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType()} />}
           {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} />}
           {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType()} />}
-          <S.TeamContact>
+          <S.TeamContact school={school}>
             {contact}
           </S.TeamContact>
         </S.TeamContactContainer>

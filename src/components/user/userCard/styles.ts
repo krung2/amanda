@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { SchoolConstant } from "../../../libs/constants/schoolConstant";
+import { checkSchoolContact, checkSchoolFont } from "../../../utils/CheckSchool";
 
 export const CardContainer = styled.div`
 width: 24.5vw;
@@ -36,10 +38,10 @@ flex-direction: column;
 width: 50%;
 `
 
-export const UserPosition = styled.span`
+export const UserPosition = styled.span<{ school: SchoolConstant }>`
 line-height: 24px;
 font-size: 1rem;
-color: #2B6BDB;
+color: ${(props) => (checkSchoolFont(props.school))};
 `
 
 export const UserName = styled.span`
@@ -68,7 +70,7 @@ font-size: 24px;
 color: #636363;
 `
 
-export const TeamContactContainer = styled.div`
+export const TeamContactContainer = styled.div<{ school: SchoolConstant }>`
 margin-top: 13px;
 display: flex;
 flex-direction: row;
@@ -78,6 +80,7 @@ padding: 4px 22px;
 width: 195px;
 height: 32px;
 background: rgba(81, 135, 231, 0.1);
+background: ${(props) => (checkSchoolContact(props.school))};
 border-radius: 30px;
 `
 
@@ -86,9 +89,9 @@ width: 20px;
 height: 20px;
 `
 
-export const TeamContact = styled.div`
+export const TeamContact = styled.div<{ school: SchoolConstant }>`
 font-size: 18px;
-color: #2B6BDB;
+color: ${(props) => (checkSchoolFont(props.school))};
 margin-left: 4px;
 line-height: 27px;
 `
