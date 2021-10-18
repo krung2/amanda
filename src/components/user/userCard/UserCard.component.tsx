@@ -1,11 +1,18 @@
 import React from "react";
 import * as S from './styles';
-import instagram from '../../../assets/img/instagram.svg';
-import discord from '../../../assets/img/discord.svg';
+import { ReactComponent as InstagramSVG } from '../../../assets/img/instagram.svg';
 import { ISchoolData } from "../../../libs/interfaces/IUserData";
 import { ContentTypes } from "../../../libs/constants/contactTypes";
-import kakao from '../../../assets/img/kakao.svg';
+import GwangjuKakao from '../../../assets/img/kakao.svg';
+import DaeguKakao from '../../../assets/img/DaeguKakao.svg';
+import DaedeokKakao from '../../../assets/img/daedeokKakao.svg';
+import GwangjuDiscord from '../../../assets/img/discord.svg';
+import DaeguDiscord from '../../../assets/img/daeguDiscord.svg';
+import DaedeokDiscord from '../../../assets/img/daedeokDiscord.svg';
 import HeaderHooks from "../../../hooks/header.hooks";
+import styled from "styled-components";
+import { SchoolConstant } from "../../../libs/constants/schoolConstant";
+import { checkSchoolSelect } from "../../../utils/CheckSchool";
 
 const UserCardComponent = (
   { cardInfo }: { cardInfo: ISchoolData }
@@ -27,6 +34,26 @@ const UserCardComponent = (
     gwangjuTeam,
     deadeokTeam
   } = cardInfo;
+
+  const checkKakaoType = (): string => {
+    if (school === SchoolConstant.DAEDEOK) return DaedeokKakao;
+    if (school === SchoolConstant.DAEGU) return DaeguKakao;
+    return GwangjuKakao;
+  }
+
+  const checkDiscordType = (): string => {
+    if (school === SchoolConstant.DAEDEOK) return DaedeokDiscord;
+    if (school === SchoolConstant.DAEGU) return DaeguDiscord;
+    return GwangjuDiscord;
+  }
+
+  const Instagram = styled(InstagramSVG) <{ school: SchoolConstant }>`
+  width: 20px;
+  height: 20px;
+  path {
+    fill: ${(props) => (checkSchoolSelect(props.school))}!important;
+  }
+  `
 
   return (
     <S.CardContainer>
@@ -61,9 +88,9 @@ const UserCardComponent = (
           {intro}
         </S.TeamIntro>
         <S.TeamContactContainer>
-          {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={discord} />}
-          {contactType === ContentTypes.INSTAGRAM && <S.TeamContactImg src={instagram} />}
-          {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={kakao} />}
+          {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType()} />}
+          {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} />}
+          {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType()} />}
           <S.TeamContact>
             {contact}
           </S.TeamContact>

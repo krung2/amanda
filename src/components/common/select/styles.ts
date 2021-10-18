@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { SchoolConstant } from "../../../libs/constants/schoolConstant";
+import { checkSchoolSelect } from "../../../utils/CheckSchool";
 
 export const Container = styled.div`
 width: 180px;
@@ -14,7 +16,7 @@ export const OpenContent = styled.div`
 position: absolute;
 `
 
-export const ModalContent = styled.div<{ position: boolean }>`
+export const ModalContent = styled.div<{ position: boolean, school: SchoolConstant }>`
 display: flex;
 align-items: center;
 justify-content: center;
@@ -22,7 +24,7 @@ width: 182px;
 height: 50px;
 border: 1px solid #F3F3F3;
 border-bottom: 0px;
-background-color: ${(props) => (props.position ? '#6292E7' : 'white')};
+background-color: ${(props) => (props.position ? checkSchoolSelect(props.school) : 'white')};
 color: ${(props) => (props.position ? 'white' : '#191919')};
 font-size: 18px;
 font-style: normal;
@@ -60,15 +62,15 @@ export const FlexBlank = styled.span`
 flex: 1 1 auto;
 `
 
-export const DisplayFlex = styled.span`
+export const DisplayFlex = styled.span<{ school: SchoolConstant }>`
 display: flex;
 align-items:center;
 justify-content: center;
 font-size: 1.3em;
-color: #6292E7;
+color: ${(props) => (checkSchoolSelect(props.school))};
 `
 
-export const Triangle = styled.img`
+export const Triangle = styled.embed`
 width: .5rem;
 height: .4rem;
 `

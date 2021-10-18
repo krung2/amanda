@@ -1,12 +1,17 @@
 import React, { RefObject, useCallback, useEffect, useRef } from "react";
-import ReverseTriangle from '../../../assets/img/Polygon 1.svg';
+import { ReactComponent as ReverseTriangle } from '../../../assets/img/Polygon 1.svg';
 import * as S from './styles';
 import selectHooks from "../../../hooks/select.hooks";
 import { Position } from "../../../libs/constants/position";
+import HeaderHooks from "../../../hooks/header.hooks";
+import styled from "styled-components";
+import { SchoolConstant } from "../../../libs/constants/schoolConstant";
+import { checkSchoolSelect } from "../../../utils/CheckSchool";
 
 const SelectComponent: React.FC = () => {
 
   const { isSelectOpen, closeModal, openModal, position, modalClicked } = selectHooks();
+  const { school } = HeaderHooks();
 
   const inputRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
 
@@ -30,6 +35,7 @@ const SelectComponent: React.FC = () => {
     .map(value => {
       return (
         <S.ModalContent
+          school={school}
           key={value}
           position={value === position}
           onClick={() => modalClicked(value)}
@@ -38,6 +44,14 @@ const SelectComponent: React.FC = () => {
         </S.ModalContent>
       )
     });
+
+  const Triangle = styled(ReverseTriangle) <{ school: SchoolConstant }>`
+    width: .5rem;
+    height: .4rem;
+    path {
+      fill: ${(props) => (checkSchoolSelect(props.school))}!important;
+    }
+  `
 
   return (
     <S.Container>
@@ -49,8 +63,9 @@ const SelectComponent: React.FC = () => {
             </S.OpenContent>
           </S.OpenContainer >
           : <S.ClosedContainer onClick={() => openModal()}>
-            <S.DisplayFlex>
-              {position} &nbsp; <S.Triangle src={ReverseTriangle} />
+            <S.DisplayFlex school={school}>
+              {position} &nbsp;
+              <Triangle school={school} />
             </S.DisplayFlex>
           </S.ClosedContainer>
       }
