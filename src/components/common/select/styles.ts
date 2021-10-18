@@ -30,6 +30,7 @@ font-size: 18px;
 font-style: normal;
 font-weight: normal;
 z-index:1;
+cursor: pointer;
 
 &:first-child {
   border-top-left-radius: 10px;
@@ -55,6 +56,7 @@ appearance: none;
 background-color: white;
 align-items: center;
 justify-content: center;
+cursor: pointer;
 `
 
 export const FlexBlank = styled.span`
