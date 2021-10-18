@@ -15,7 +15,7 @@ const HeaderComponent: React.FC = () => {
         <S.DisplayFlex>
           <S.SiteMent>
             우리 팀과 딱 맞는 팀들을 찾고있다면 <br />
-            <S.PointMent school={school}>아만다</S.PointMent>를 통해 원하는
+            <S.PointMent school={school}>아만다</S.PointMent>를 통해 원하는 <span> </span>
             <S.PointMent school={school}>포지션별</S.PointMent>로 팀을 찾아보세요!
           </S.SiteMent>
           <S.FlexBlank />
