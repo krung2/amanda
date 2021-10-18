@@ -7,4 +7,5 @@ width: 75vw;
 margin-left: 12.5vw;
 padding: 20px 0 20px 0;
 gap: .75vw;
+z-index: -2;
 `

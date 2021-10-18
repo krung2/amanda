@@ -54,6 +54,17 @@ const UserCardComponent = (
     return TeamCheckType.NOTAPPLICABLE;
   }
 
+  const userClick = async (): Promise<void> => {
+    console.log(1);
+    if (contactType === ContentTypes.INSTAGRAM) {
+      window.open(`https://www.instagram.com/${contact}`);
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(contact);
+      alert('복사 성공!');
+    } catch (error) { }
+  }
   const Instagram = styled(InstagramSVG) <{ school: SchoolConstant }>`
   width: 20px;
   height: 20px;
@@ -101,12 +112,12 @@ const UserCardComponent = (
         <S.TeamIntro>
           {intro}
         </S.TeamIntro>
-        <S.TeamContactContainer school={school}>
+        <S.TeamContactContainer school={school} onClick={() => userClick()}>
           {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType()} />}
           {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} />}
           {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType()} />}
-          <S.TeamContact school={school}>
-            {contact}
+          <S.TeamContact school={school} >
+            {contactType === ContentTypes.INSTAGRAM && '@'}{contact}
           </S.TeamContact>
         </S.TeamContactContainer>
       </S.TeamContainer>

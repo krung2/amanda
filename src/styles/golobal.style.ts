@@ -3,9 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   *, ::after, ::before {
     box-sizing: border-box;
+    position: relative;
   }
 
   #root {
+    z-index: -10;
  }
 
   div {
@@ -22,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     color: #212529;
     text-align: left;
     background: #ffffff;
+    z-index: -10;
   }
 
   html {

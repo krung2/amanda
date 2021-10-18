@@ -5,6 +5,7 @@ import { TeamCheckType } from "../../../libs/constants/teamcheckType";
 import { checkSchoolContact, checkSchoolFont } from "../../../utils/CheckSchool";
 
 export const CardContainer = styled.div`
+position: relative;
 width: 24.5vw;
 min-width: 281px;
 max-width: 450px;
@@ -85,6 +86,7 @@ height: 32px;
 background: rgba(81, 135, 231, 0.1);
 background: ${(props) => (checkSchoolContact(props.school))};
 border-radius: 30px;
+cursor: pointer;
 `
 
 export const TeamContactImg = styled.embed`
