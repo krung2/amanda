@@ -55,15 +55,18 @@ const UserCardComponent = (
   }
 
   const userClick = async (): Promise<void> => {
-    console.log(1);
     if (contactType === ContentTypes.INSTAGRAM) {
       window.open(`https://www.instagram.com/${contact}`);
       return;
     }
-    try {
-      await navigator.clipboard.writeText(contact);
-      alert('복사 성공!');
-    } catch (error) { }
+
+    const t = document.createElement("textarea");
+    document.body.appendChild(t);
+    t.value = contact;
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('클립보드에 복사되었습니다');
   }
   const Instagram = styled(InstagramSVG) <{ school: SchoolConstant }>`
   width: 20px;

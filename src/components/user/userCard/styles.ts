@@ -92,6 +92,7 @@ cursor: pointer;
 export const TeamContactImg = styled.embed`
 width: 20px;
 height: 20px;
+z-index: 0;
 `
 
 export const TeamContact = styled.div<{ school: SchoolConstant }>`
