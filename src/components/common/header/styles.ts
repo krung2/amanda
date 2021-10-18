@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { SchoolConstant } from "../../../libs/constants/schoolConstant";
+import { checkSchoolBack, checkSchoolFont, checkSchoolHeader } from "../../../utils/CheckSchool";
 
-export const Header = styled.div`
+export const Header = styled.div<{ school: SchoolConstant }>`
 padding-top: 10px;
 width: 100%;
-background-color: #F7F9FD;
+background-color: ${(props) => (checkSchoolHeader(props.school))};
 justify-content: center;
 `
 
@@ -13,9 +15,9 @@ top: 0;
 margin-left: 12.5vw;
 `
 
-export const LogoName = styled.div`
+export const LogoName = styled.div<{ school: SchoolConstant }>`
 font-size: 1.2rem;
-color: #2B6BDB;
+color: ${(props) => (checkSchoolFont(props.school))};
 font-family: Gmarket Sans;
 `
 
@@ -26,8 +28,8 @@ font-family: Gmarket Sans TTF;
 line-height: 39px
 `
 
-export const PointMent = styled.span`
-color: #2B6BDB;
+export const PointMent = styled.span<{ school: SchoolConstant }>`
+color: ${(props) => (checkSchoolFont(props.school))};
 `
 
 export const DisplayFlex = styled.div`
@@ -57,16 +59,16 @@ export const FlexBlank = styled.span`
 flex: 1 1 auto;
 `
 
-export const SchoolName = styled(FlexBlank) <{ school: boolean }>`
+export const SchoolName = styled(FlexBlank) <{ school: boolean, schoolCheck: SchoolConstant }>`
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 1.5rem;
-border: 1px solid ${(props) => (props.school ? '#5187E7' : '#F3F3F3')};
+border: 1px solid ${(props) => (props.school ? checkSchoolBack(props.schoolCheck) : '#F3F3F3')};
 border-collapse: collapse;
 box-sizing: border-box;
 color: ${(props) => (props.school ? 'white' : '#E7E7E7')};
-background-color: ${(props) => (props.school && '#5187E7')};
+background-color: ${(props) => (props.school ? checkSchoolBack(props.schoolCheck) : 'white')};
 margin: 0 auto;
 cursor: pointer;
 `

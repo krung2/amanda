@@ -5,10 +5,13 @@ import discord from '../../../assets/img/discord.svg';
 import { ISchoolData } from "../../../libs/interfaces/IUserData";
 import { ContentTypes } from "../../../libs/constants/contactTypes";
 import kakao from '../../../assets/img/kakao.svg';
+import HeaderHooks from "../../../hooks/header.hooks";
 
 const UserCardComponent = (
   { cardInfo }: { cardInfo: ISchoolData }
 ): JSX.Element => {
+
+  const { school } = HeaderHooks();
 
   const {
     name1,

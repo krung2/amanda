@@ -9,14 +9,14 @@ const HeaderComponent: React.FC = () => {
   const { school, setSchool } = headerHooks();
 
   return (
-    <S.Header>
+    <S.Header school={school}>
       <S.HeaderFrame>
-        <S.LogoName>Amanda</S.LogoName>
+        <S.LogoName school={school}>Amanda</S.LogoName>
         <S.DisplayFlex>
           <S.SiteMent>
             우리 팀과 딱 맞는 팀들을 찾고있다면 <br />
-            <S.PointMent>아만다</S.PointMent>를 통해 원하는
-            <S.PointMent>포지션별</S.PointMent>로 팀을 찾아보세요!
+            <S.PointMent school={school}>아만다</S.PointMent>를 통해 원하는
+            <S.PointMent school={school}>포지션별</S.PointMent>로 팀을 찾아보세요!
           </S.SiteMent>
           <S.FlexBlank />
           <S.PositionSelect>
@@ -28,18 +28,21 @@ const HeaderComponent: React.FC = () => {
         <S.SchoolBox>
           <S.SchoolName
             school={school === SchoolConstant.GWANGJU}
+            schoolCheck={school}
             onClick={() => setSchool(SchoolConstant.GWANGJU)}
           >
             광주
           </S.SchoolName>
           <S.SchoolName
             school={school === SchoolConstant.DAEGU}
+            schoolCheck={school}
             onClick={() => setSchool(SchoolConstant.DAEGU)}
           >
             대구
           </S.SchoolName>
           <S.SchoolName
             school={school === SchoolConstant.DAEDEOK}
+            schoolCheck={school}
             onClick={() => setSchool(SchoolConstant.DAEDEOK)}
           >
             대덕
