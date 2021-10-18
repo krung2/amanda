@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.7990bd71.chunk.css",
-    "main.js": "/static/js/main.2227ec63.chunk.js",
-    "main.js.map": "/static/js/main.2227ec63.chunk.js.map",
+    "main.js": "/static/js/main.e8d7fa9e.chunk.js",
+    "main.js.map": "/static/js/main.e8d7fa9e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8d33515c.js",
     "runtime-main.js.map": "/static/js/runtime-main.8d33515c.js.map",
-    "static/js/2.7f67ffcf.chunk.js": "/static/js/2.7f67ffcf.chunk.js",
-    "static/js/2.7f67ffcf.chunk.js.map": "/static/js/2.7f67ffcf.chunk.js.map",
+    "static/js/2.f93f18af.chunk.js": "/static/js/2.f93f18af.chunk.js",
+    "static/js/2.f93f18af.chunk.js.map": "/static/js/2.f93f18af.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.7990bd71.chunk.css.map": "/static/css/main.7990bd71.chunk.css.map",
-    "static/js/2.7f67ffcf.chunk.js.LICENSE.txt": "/static/js/2.7f67ffcf.chunk.js.LICENSE.txt",
+    "static/js/2.f93f18af.chunk.js.LICENSE.txt": "/static/js/2.f93f18af.chunk.js.LICENSE.txt",
     "static/media/DaeguKakao.78f03201.svg": "/static/media/DaeguKakao.78f03201.svg",
     "static/media/font.style.css": "/static/media/NotoSansCJKkr-Regular.5c526d15.woff",
     "static/media/Polygon 1.afdca1c1.svg": "/static/media/Polygon 1.afdca1c1.svg",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.8d33515c.js",
-    "static/js/2.7f67ffcf.chunk.js",
+    "static/js/2.f93f18af.chunk.js",
     "static/css/main.7990bd71.chunk.css",
-    "static/js/main.2227ec63.chunk.js"
+    "static/js/main.e8d7fa9e.chunk.js"
   ]
 }
