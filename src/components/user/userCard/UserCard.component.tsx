@@ -13,6 +13,7 @@ import HeaderHooks from "../../../hooks/header.hooks";
 import styled from "styled-components";
 import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import { checkSchoolSelect } from "../../../utils/CheckSchool";
+import { TeamCheckType } from "../../../libs/constants/teamcheckType";
 
 const UserCardComponent = (
   { cardInfo }: { cardInfo: ISchoolData }
@@ -32,7 +33,7 @@ const UserCardComponent = (
     contact,
     daeguTeam,
     gwangjuTeam,
-    deadeokTeam
+    deadoekTeam
   } = cardInfo;
 
   const checkKakaoType = (): string => {
@@ -45,6 +46,12 @@ const UserCardComponent = (
     if (school === SchoolConstant.DAEDEOK) return DaedeokDiscord;
     if (school === SchoolConstant.DAEGU) return DaeguDiscord;
     return GwangjuDiscord;
+  }
+
+  const checkSchoolType = (team: boolean | undefined): TeamCheckType => {
+    if (team === false) return TeamCheckType.NOTHAVE;
+    if (team === true) return TeamCheckType.HAVE;
+    return TeamCheckType.NOTAPPLICABLE;
   }
 
   const Instagram = styled(InstagramSVG) <{ school: SchoolConstant }>`
@@ -82,6 +89,13 @@ const UserCardComponent = (
             {github2}
           </S.UserGithub>
         </S.UserInfo>
+        <S.SchoolCheckBox>
+          <S.CheckBoxs>
+            <S.GwangjuCheckBox teamCheck={checkSchoolType(gwangjuTeam)} />
+            <S.DaeguCheckBox teamCheck={checkSchoolType(daeguTeam)} />
+            <S.DaedeokCheckBox teamCheck={checkSchoolType(deadoekTeam)} />
+          </S.CheckBoxs>
+        </S.SchoolCheckBox>
       </S.UserInfoContainer>
       <S.TeamContainer>
         <S.TeamIntro>

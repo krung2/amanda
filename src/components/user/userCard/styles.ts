@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import { SchoolColor } from "../../../libs/constants/schoolColor";
 import { SchoolConstant } from "../../../libs/constants/schoolConstant";
+import { TeamCheckType } from "../../../libs/constants/teamcheckType";
 import { checkSchoolContact, checkSchoolFont } from "../../../utils/CheckSchool";
 
 export const CardContainer = styled.div`
@@ -36,6 +38,7 @@ justify-items: center;
 align-items: center;
 flex-direction: column;
 width: 50%;
+z-index: -1;
 `
 
 export const UserPosition = styled.span<{ school: SchoolConstant }>`
@@ -94,4 +97,46 @@ font-size: 18px;
 color: ${(props) => (checkSchoolFont(props.school))};
 margin-left: 4px;
 line-height: 27px;
+`
+
+export const SchoolCheckBox = styled.div`
+position:relative;
+`
+
+export const CheckBoxs = styled.div`
+position: absolute;
+top: 14px;
+right: 20px;
+right: 1vw;
+gap: 4px;
+display: flex;
+`
+
+const CheckBox = styled.div<{ teamCheck: TeamCheckType }>`
+width: 12px;
+height: 12px;
+border-radius: 50%;
+z-index: 1;
+`
+
+export const GwangjuCheckBox = styled(CheckBox)`
+display: ${(props) => props.teamCheck === TeamCheckType.NOTAPPLICABLE && 'none'};
+background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : 'white'};
+border: 1px solid ${SchoolColor.GWANGJU_BACK};
+/* ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : 'white'}; */
+`
+
+export const DaeguCheckBox = styled(CheckBox)`
+display: ${(props) => props.teamCheck === TeamCheckType.NOTAPPLICABLE && 'none'};
+background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.DAEGU_BACK : 'white'};
+border: 1px solid ${SchoolColor.DAEGU_BACK};
+/* ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : 'white'}; */
+`
+
+export const DaedeokCheckBox = styled(CheckBox)`
+display: ${(props) => props.teamCheck === TeamCheckType.NOTAPPLICABLE && 'none'};
+background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.DAEDEOK_BACK : 'white'};
+border: 1px solid ${SchoolColor.DAEDEOK_BACK};
+/* ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : 'white'}; */
+
 `

@@ -16,16 +16,17 @@ margin-left: 12.5vw;
 `
 
 export const LogoName = styled.div<{ school: SchoolConstant }>`
-font-size: 1.2rem;
+font-size: 1.4rem;
+color: ${(props) => (checkSchoolFont(props.school))};
 color: ${(props) => (checkSchoolFont(props.school))};
 font-family: Gmarket Sans;
 `
 
 export const SiteMent = styled.div`
 color: #747474;
-font-size: 1.3rem;
+font-size: 1.2rem;
 font-family: Gmarket Sans TTF;
-line-height: 39px
+line-height: 39px;
 `
 
 export const PointMent = styled.span<{ school: SchoolConstant }>`
