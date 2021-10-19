@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SchoolConstant } from "../../../libs/constants/schoolConstant";
-import { checkSchoolBack, checkSchoolFont, checkSchoolHeader } from "../../../utils/CheckSchool";
+import { checkSchoolBack, checkSchoolFont, checkSchoolHeader, checkSchoolSelect } from "../../../utils/CheckSchool";
 
 export const Header = styled.div<{ school: SchoolConstant }>`
 padding-top: 10px;
@@ -23,6 +23,8 @@ font-family: Gmarket Sans;
 `
 
 export const SiteMent = styled.div`
+display: flex;
+align-items: center;
 color: #747474;
 font-size: 1.2rem;
 font-family: Gmarket Sans TTF;
@@ -36,7 +38,7 @@ color: ${(props) => (checkSchoolFont(props.school))};
 export const DisplayFlex = styled.div`
 display: flex;
 flex-wrap: wrap;
-padding: 1.2rem 0 .9rem 0;
+padding: 1.2vw 0 .9rem 0;
 `
 
 export const SchoolContainer = styled.div`
@@ -77,10 +79,29 @@ cursor: pointer;
 export const PositionSelect = styled.div`
 width: 180px;
 height: 50px;
-margin-top: 2.5rem;
+/* margin-top: 2.5rem; */
 border: 1px solid #F3F3F3;
 box-sizing: border - box;
 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);
 border-radius: 10px;
 appearance: none;
+`
+
+export const CompleteMatch = styled.div<{ schoolCheck: SchoolConstant }>`
+width: 180px;
+height: 50px;
+background-color: ${(props) => (checkSchoolSelect(props.schoolCheck))};
+margin-bottom: 10px;
+border-radius: 10px;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 18px;
+cursor: pointer;
+`
+
+export const CompleteArrow = styled.img`
+width: 20px;
+height: 20px;
 `
