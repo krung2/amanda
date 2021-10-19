@@ -79,7 +79,6 @@ cursor: pointer;
 export const PositionSelect = styled.div`
 width: 180px;
 height: 50px;
-/* margin-top: 2.5rem; */
 border: 1px solid #F3F3F3;
 box-sizing: border - box;
 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);

@@ -23,7 +23,10 @@ const HeaderComponent: React.FC = () => {
           </S.SiteMent>
           <S.FlexBlank />
           <div>
-            <S.CompleteMatch schoolCheck={school}>
+            <S.CompleteMatch
+              schoolCheck={school}
+              onClick={() => window.location.href = '/connect'}
+            >
               매칭 완료 팀 <S.CompleteArrow src={arrow} />
             </S.CompleteMatch>
             <S.PositionSelect>

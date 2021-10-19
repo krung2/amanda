@@ -2,19 +2,18 @@ import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
 import * as G from './styles/golobal.style';
 import './styles/font.style.css';
-import HeaderComponent from './components/common/header/Header.component';
-import UserListComponent from './components/user/UserList.component';
+// import UserListPage from './pages/userList.page';
+import App from './components/App';
 
-function App() {
+const Root = () => {
   return (
     <RecoilRoot>
       <BrowserRouter>
         <G.GlobalStyle />
-        <HeaderComponent />
-        <UserListComponent />
+        <App />
       </BrowserRouter>
     </RecoilRoot>
   );
 }
 
-export default App;
+export default Root;
