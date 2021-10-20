@@ -1,8 +1,9 @@
+import ConnectHeaderComponent from "../components/connect/header/ConnectHeader.component";
 
 const ConnectPage = () => {
   return (
     <>
-      a
+      <ConnectHeaderComponent />
     </>
   )
 }

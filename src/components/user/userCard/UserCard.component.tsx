@@ -14,9 +14,10 @@ import styled from "styled-components";
 import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import { checkSchoolSelect } from "../../../utils/CheckSchool";
 import { TeamCheckType } from "../../../libs/constants/teamcheckType";
+import { IUserCardProps } from "../../../libs/interfaces/IUserCardProps";
 
 const UserCardComponent = (
-  { cardInfo }: { cardInfo: ISchoolData }
+  { cardInfo }: { cardInfo: IUserCardProps },
 ): JSX.Element => {
 
   const { school } = HeaderHooks();

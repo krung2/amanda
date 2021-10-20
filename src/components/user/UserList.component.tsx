@@ -23,21 +23,33 @@ const UserListComponent: React.FC = () => {
     .filter(({ position1, position2 }: ISchoolData) => positionFilter(position1, position2, position))
     .filter((dagueData: ISchoolData) => checkNullCard(dagueData))
     .map((dagueData: ISchoolData) => {
-      return <UserCardComponent key={dagueData.name1} cardInfo={dagueData} />
+      return <UserCardComponent key={dagueData.name1} cardInfo={{
+        isMatch: false,
+        school: SchoolConstant.DAEGU,
+        ...dagueData,
+      }} />
     })
 
   const daedeokCard: JSX.Element[] = daedeok
     .filter(({ position1, position2 }: ISchoolData) => positionFilter(position1, position2, position))
     .filter((daedeokData: ISchoolData) => checkNullCard(daedeokData))
     .map((daedeokData: ISchoolData) => {
-      return <UserCardComponent key={daedeokData.name1} cardInfo={daedeokData} />
+      return <UserCardComponent key={daedeokData.name1} cardInfo={{
+        isMatch: false,
+        school: SchoolConstant.DAEDEOK,
+        ...daedeokData,
+      }} />
     })
 
   const gwangjuCard: JSX.Element[] = gwangju
     .filter(({ position1, position2 }: ISchoolData) => positionFilter(position1, position2, position))
     .filter((gwangjuData: ISchoolData) => checkNullCard(gwangjuData))
     .map((gwangjuData: ISchoolData) => {
-      return <UserCardComponent key={gwangjuData.name1} cardInfo={gwangjuData} />
+      return <UserCardComponent key={gwangjuData.name1} cardInfo={{
+        isMatch: false,
+        school: SchoolConstant.GWANGJU,
+        ...gwangjuData
+      }} />
     })
 
   return (
