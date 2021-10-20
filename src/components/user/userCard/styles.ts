@@ -4,12 +4,12 @@ import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import { TeamCheckType } from "../../../libs/constants/teamcheckType";
 import { checkSchoolContact, checkSchoolFont } from "../../../utils/CheckSchool";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<{ isMatch: boolean }>`
 position: relative;
 width: 24.5vw;
 min-width: 281px;
 max-width: 450px;
-height: 268px; 
+height: ${(props) => (props.isMatch ? '230px' : '268px')};
 border: 1px solid #F3F3F3;
 box-sizing: border-box;
 filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.2));
