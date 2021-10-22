@@ -6,4 +6,5 @@ export enum Position {
   IOS = 'ios',
   EMBEDED = '임베디드',
   AI = '인공지능',
+  GAME = '게임',
 }
