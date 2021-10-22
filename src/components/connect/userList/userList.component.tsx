@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-const UserListComponent = () => {
+const ConnectUserListComponent = () => {
 
   return (
     <>
@@ -9,4 +9,4 @@ const UserListComponent = () => {
   )
 }
 
-export default UserListComponent
+export default ConnectUserListComponent
