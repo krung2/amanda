@@ -25,7 +25,7 @@ const HeaderComponent: React.FC = () => {
           <div>
             <S.CompleteMatch
               schoolCheck={school}
-              onClick={() => window.location.href = '/connect'}
+              onClick={() => window.location.href = '/#/connect'}
             >
               매칭 완료 팀 <S.CompleteArrow src={arrow} />
             </S.CompleteMatch>
