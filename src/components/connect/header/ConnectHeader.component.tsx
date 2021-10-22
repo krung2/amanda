@@ -11,7 +11,7 @@ const ConnectHeaderComponent = () => {
       </div>
 
       <S.DisplayFlex>
-        <S.BackButton onClick={() => window.location.replace('/')}>
+        <S.BackButton>
           <embed src={BackArrow} />
           <S.BackMent>
             돌아가기
