@@ -22,11 +22,11 @@ margin-top: 8px;
 display: flex;
 align-items: center;
 cursor: pointer;
+z-index: 1;
 `
 
-export const BackArrow = styled.div`
-width: 24px;
-height: 24px;
+export const BackArrow = styled.img`
+z-index: 0;
 `
 
 export const BackMent = styled.span`
@@ -39,6 +39,7 @@ line-height: 30px;
 export const Flex = styled.div`
 `
 
-export const MatchMent = styled.embed`
+export const MatchMent = styled.embed<{ isEmpty: boolean }>`
+display: ${(props) => props.isEmpty && 'none'};
 margin: 0 auto;
 `

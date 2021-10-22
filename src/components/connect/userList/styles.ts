@@ -21,3 +21,19 @@ display: flex;
 align-items: center;
 justify-content: center;
 `
+
+export const DisplayFlex = styled.div`
+margin-top: 5vw;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+`
+
+export const NoContentMent = styled.span`
+font-size: 24px;
+line-height: 40px;
+text-align: center;
+color: #8D8D8D;
+
+`
