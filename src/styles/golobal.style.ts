@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   div {
     display: block;
   }
-
+  
   body {
     min-height: 100vh;
     background: inherit;

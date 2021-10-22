@@ -1,25 +1,17 @@
 import React from "react";
 import * as S from './styles';
 import { ReactComponent as InstagramSVG } from '../../../assets/img/instagram.svg';
-import { ISchoolData } from "../../../libs/interfaces/IUserData";
 import { ContentTypes } from "../../../libs/constants/contactTypes";
-import GwangjuKakao from '../../../assets/img/kakao.svg';
-import DaeguKakao from '../../../assets/img/DaeguKakao.svg';
-import DaedeokKakao from '../../../assets/img/daedeokKakao.svg';
-import GwangjuDiscord from '../../../assets/img/discord.svg';
-import DaeguDiscord from '../../../assets/img/daeguDiscord.svg';
-import DaedeokDiscord from '../../../assets/img/daedeokDiscord.svg';
-import HeaderHooks from "../../../hooks/header.hooks";
 import styled from "styled-components";
 import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import { checkSchoolSelect } from "../../../utils/CheckSchool";
-import { TeamCheckType } from "../../../libs/constants/teamcheckType";
+import { IUserCardProps } from "../../../libs/interfaces/IUserCardProps";
+import { checkDiscordType, checkKakaoType, checkSchoolType } from "../../../utils/checkType";
+import { userClick } from "../../../utils/userCardUtil";
 
 const UserCardComponent = (
-  { cardInfo }: { cardInfo: ISchoolData }
+  { cardInfo }: { cardInfo: IUserCardProps },
 ): JSX.Element => {
-
-  const { school } = HeaderHooks();
 
   const {
     name1,
@@ -33,41 +25,11 @@ const UserCardComponent = (
     contact,
     daeguTeam,
     gwangjuTeam,
-    daedoekTeam
+    daedoekTeam,
+    school,
+    isMatch,
   } = cardInfo;
 
-  const checkKakaoType = (): string => {
-    if (school === SchoolConstant.DAEDEOK) return DaedeokKakao;
-    if (school === SchoolConstant.DAEGU) return DaeguKakao;
-    return GwangjuKakao;
-  }
-
-  const checkDiscordType = (): string => {
-    if (school === SchoolConstant.DAEDEOK) return DaedeokDiscord;
-    if (school === SchoolConstant.DAEGU) return DaeguDiscord;
-    return GwangjuDiscord;
-  }
-
-  const checkSchoolType = (team: boolean | undefined): TeamCheckType => {
-    if (team === false) return TeamCheckType.NOTHAVE;
-    if (team === true) return TeamCheckType.HAVE;
-    return TeamCheckType.NOTAPPLICABLE;
-  }
-
-  const userClick = async (): Promise<void> => {
-    if (contactType === ContentTypes.INSTAGRAM) {
-      window.open(`https://www.instagram.com/${contact}`);
-      return;
-    }
-
-    const t = document.createElement("textarea");
-    document.body.appendChild(t);
-    t.value = contact;
-    t.select();
-    document.execCommand('copy');
-    document.body.removeChild(t);
-    alert('클립보드에 복사되었습니다');
-  }
   const Instagram = styled(InstagramSVG) <{ school: SchoolConstant }>`
   width: 20px;
   height: 20px;
@@ -77,7 +39,7 @@ const UserCardComponent = (
   `
 
   return (
-    <S.CardContainer>
+    <S.CardContainer isMatch={isMatch}>
       <S.UserInfoContainer>
         <S.UserInfo>
           <S.UserInfoBox>
@@ -104,25 +66,31 @@ const UserCardComponent = (
           </S.UserGithub>
         </S.UserInfo>
         <S.SchoolCheckBox>
-          <S.CheckBoxs>
-            <S.GwangjuCheckBox teamCheck={checkSchoolType(gwangjuTeam)} />
-            <S.DaeguCheckBox teamCheck={checkSchoolType(daeguTeam)} />
-            <S.DaedeokCheckBox teamCheck={checkSchoolType(daedoekTeam)} />
-          </S.CheckBoxs>
+          {
+            !isMatch &&
+            <S.CheckBoxs>
+              <S.GwangjuCheckBox teamCheck={checkSchoolType(gwangjuTeam)} />
+              <S.DaeguCheckBox teamCheck={checkSchoolType(daeguTeam)} />
+              <S.DaedeokCheckBox teamCheck={checkSchoolType(daedoekTeam)} />
+            </S.CheckBoxs>
+          }
         </S.SchoolCheckBox>
       </S.UserInfoContainer>
       <S.TeamContainer>
         <S.TeamIntro>
           {intro}
         </S.TeamIntro>
-        <S.TeamContactContainer school={school} onClick={() => userClick()}>
-          {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType()} />}
-          {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} />}
-          {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType()} />}
-          <S.TeamContact school={school} >
-            {contactType === ContentTypes.INSTAGRAM && '@'}{contact}
-          </S.TeamContact>
-        </S.TeamContactContainer>
+        {
+          !isMatch &&
+          <S.TeamContactContainer school={school} onClick={() => userClick(contactType, contact)}>
+            {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType(school)} />}
+            {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} />}
+            {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType(school)} />}
+            <S.TeamContact school={school} >
+              {contactType === ContentTypes.INSTAGRAM && '@'}{contact}
+            </S.TeamContact>
+          </S.TeamContactContainer>
+        }
       </S.TeamContainer>
     </S.CardContainer >
   )

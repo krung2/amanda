@@ -1,5 +1,6 @@
 import React from "react";
 import headerHooks from "../../../hooks/header.hooks";
+import arrow from '../../../assets/img/arrow.svg';
 import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import SelectComponent from "../select/Select.component";
 import * as S from './styles';
@@ -14,14 +15,24 @@ const HeaderComponent: React.FC = () => {
         <S.LogoName school={school}>Amanda</S.LogoName>
         <S.DisplayFlex>
           <S.SiteMent>
-            우리 팀과 딱 맞는 팀들을 찾고있다면 <br />
-            <S.PointMent school={school}>아만다</S.PointMent>를 통해 원하는 <span> </span>
-            <S.PointMent school={school}>포지션별</S.PointMent>로 팀을 찾아보세요!
+            <div>
+              우리 팀과 딱 맞는 팀들을 찾고있다면 <br />
+              <S.PointMent school={school}>아만다</S.PointMent>를 통해 원하는
+              <S.PointMent school={school}>포지션별</S.PointMent>로 팀을 찾아보세요!
+            </div>
           </S.SiteMent>
           <S.FlexBlank />
-          <S.PositionSelect>
-            <SelectComponent />
-          </S.PositionSelect>
+          <div>
+            <S.CompleteMatch
+              schoolCheck={school}
+              onClick={() => window.location.href = '/connect'}
+            >
+              매칭 완료 팀 <S.CompleteArrow src={arrow} />
+            </S.CompleteMatch>
+            <S.PositionSelect>
+              <SelectComponent />
+            </S.PositionSelect>
+          </div>
         </S.DisplayFlex>
       </S.HeaderFrame>
       <S.SchoolContainer>
