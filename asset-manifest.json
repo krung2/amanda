@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.7990bd71.chunk.css",
-    "main.js": "/static/js/main.a652e9df.chunk.js",
-    "main.js.map": "/static/js/main.a652e9df.chunk.js.map",
+    "main.js": "/static/js/main.d05c93b5.chunk.js",
+    "main.js.map": "/static/js/main.d05c93b5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8d33515c.js",
     "runtime-main.js.map": "/static/js/runtime-main.8d33515c.js.map",
     "static/js/2.a48dca8f.chunk.js": "/static/js/2.a48dca8f.chunk.js",
@@ -10,7 +10,7 @@
     "index.html": "/index.html",
     "static/css/main.7990bd71.chunk.css.map": "/static/css/main.7990bd71.chunk.css.map",
     "static/js/2.a48dca8f.chunk.js.LICENSE.txt": "/static/js/2.a48dca8f.chunk.js.LICENSE.txt",
-    "static/media/BackArrow.88b5bb00.svg": "/static/media/BackArrow.88b5bb00.svg",
+    "static/media/BackArrow.88557292.svg": "/static/media/BackArrow.88557292.svg",
     "static/media/DaeguKakao.78f03201.svg": "/static/media/DaeguKakao.78f03201.svg",
     "static/media/font.style.css": "/static/media/NotoSansCJKkr-Regular.5c526d15.woff",
     "static/media/Polygon 1.afdca1c1.svg": "/static/media/Polygon 1.afdca1c1.svg",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.8d33515c.js",
     "static/js/2.a48dca8f.chunk.js",
     "static/css/main.7990bd71.chunk.css",
-    "static/js/main.a652e9df.chunk.js"
+    "static/js/main.d05c93b5.chunk.js"
   ]
 }
