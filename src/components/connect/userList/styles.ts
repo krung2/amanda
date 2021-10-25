@@ -34,6 +34,6 @@ export const NoContentMent = styled.span`
 font-size: 24px;
 line-height: 40px;
 text-align: center;
-color: #8D8D8D;
-
+color: #494949;
+font-weight: 100;
 `

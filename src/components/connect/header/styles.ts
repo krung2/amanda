@@ -12,7 +12,7 @@ height: 25px;
 `
 
 export const DisplayFlex = styled.div`
-margin-top: 27px;
+margin-top: 20px;
 display: flex;
 align-items: center;
 `
@@ -32,12 +32,13 @@ z-index: 0;
 export const BackMent = styled.span`
 font-size: 20px;
 height: 26px;
-color: #8D8D8D;
+color: #494949;
 line-height: 30px;
+font-weight: 100;
 `
 
 export const Flex = styled.div`
-`
+  `
 
 export const MatchMent = styled.embed<{ isEmpty: boolean }>`
 display: ${(props) => props.isEmpty && 'none'};
