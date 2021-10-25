@@ -67,10 +67,12 @@ display: flex;
 height: 115px;
 align-items: center;
 flex-direction: column;
+overflow-x: hidden;
 `
 
-export const TeamIntro = styled.span`
-font-size: 24px;
+export const TeamIntro = styled.span<{ fontLength: number }>`
+/* font-size: 24px; */
+font-size: ${(props) => props.fontLength <= 10 ? '24' : 24 - (Math.ceil(props.fontLength / 4))}px;
 color: #636363;
 `
 

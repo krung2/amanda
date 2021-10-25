@@ -77,7 +77,7 @@ const UserCardComponent = (
         </S.SchoolCheckBox>
       </S.UserInfoContainer>
       <S.TeamContainer>
-        <S.TeamIntro>
+        <S.TeamIntro fontLength={intro.length}>
           {intro}
         </S.TeamIntro>
         {
