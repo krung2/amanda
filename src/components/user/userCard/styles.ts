@@ -8,7 +8,6 @@ export const CardContainer = styled.div<{ isMatch: boolean }>`
 position: relative;
 width: 24.5vw;
 min-width: 281px;
-max-width: 450px;
 height: ${(props) => (props.isMatch ? '230px' : '268px')};
 border: 1px solid #F3F3F3;
 box-sizing: border-box;
