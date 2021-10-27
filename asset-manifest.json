@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.7990bd71.chunk.css",
-    "main.js": "/static/js/main.4fdb6ea6.chunk.js",
-    "main.js.map": "/static/js/main.4fdb6ea6.chunk.js.map",
+    "main.js": "/static/js/main.e436b215.chunk.js",
+    "main.js.map": "/static/js/main.e436b215.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8d33515c.js",
     "runtime-main.js.map": "/static/js/runtime-main.8d33515c.js.map",
     "static/js/2.a48dca8f.chunk.js": "/static/js/2.a48dca8f.chunk.js",
@@ -11,17 +11,15 @@
     "static/css/main.7990bd71.chunk.css.map": "/static/css/main.7990bd71.chunk.css.map",
     "static/js/2.a48dca8f.chunk.js.LICENSE.txt": "/static/js/2.a48dca8f.chunk.js.LICENSE.txt",
     "static/media/BackArrow.88557292.svg": "/static/media/BackArrow.88557292.svg",
-    "static/media/DaeguKakao.78f03201.svg": "/static/media/DaeguKakao.78f03201.svg",
     "static/media/font.style.css": "/static/media/NotoSansCJKkr-Regular.5c526d15.woff",
     "static/media/Polygon 1.afdca1c1.svg": "/static/media/Polygon 1.afdca1c1.svg",
     "static/media/arrow.ca1b8ff8.svg": "/static/media/arrow.ca1b8ff8.svg",
     "static/media/colorLogo.4bb65331.svg": "/static/media/colorLogo.4bb65331.svg",
     "static/media/daedeokDiscord.c7846433.svg": "/static/media/daedeokDiscord.c7846433.svg",
-    "static/media/daedeokKakao.9240a917.svg": "/static/media/daedeokKakao.9240a917.svg",
     "static/media/daeguDiscord.580e7c63.svg": "/static/media/daeguDiscord.580e7c63.svg",
     "static/media/discord.986fe972.svg": "/static/media/discord.986fe972.svg",
-    "static/media/instagram.055daf52.svg": "/static/media/instagram.055daf52.svg",
-    "static/media/kakao.b4c114b9.svg": "/static/media/kakao.b4c114b9.svg",
+    "static/media/instagram.8796c132.svg": "/static/media/instagram.8796c132.svg",
+    "static/media/kakao.d729a352.svg": "/static/media/kakao.d729a352.svg",
     "static/media/matchMent.946b0fde.svg": "/static/media/matchMent.946b0fde.svg",
     "static/media/noConnectTeam.d046ef57.svg": "/static/media/noConnectTeam.d046ef57.svg",
     "static/media/plus.9758c3ba.svg": "/static/media/plus.9758c3ba.svg"
@@ -30,6 +28,6 @@
     "static/js/runtime-main.8d33515c.js",
     "static/js/2.a48dca8f.chunk.js",
     "static/css/main.7990bd71.chunk.css",
-    "static/js/main.4fdb6ea6.chunk.js"
+    "static/js/main.e436b215.chunk.js"
   ]
 }
