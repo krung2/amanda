@@ -20,6 +20,7 @@ export const UserInfoContainer = styled.div`
 display: flex;
 height: 152px;
 border-bottom: 1px solid #F3F3F3;
+z-index: -1;
 `
 
 export const UserInfoBox = styled.div`
@@ -28,7 +29,6 @@ width: 100%;
 align-items: center;
 flex-direction: column;
 border-right: 1px solid #F3F3F3;
-
 `
 
 export const UserInfo = styled.div`
@@ -51,6 +51,7 @@ export const UserName = styled.span`
 font-size: 24px;
 line-height: 36px;
 color: #191919;
+cursor: pointer;
 `
 
 export const UserGithub = styled.span`
