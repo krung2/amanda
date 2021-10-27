@@ -39,7 +39,7 @@ color: ${(props) => (checkSchoolFont(props.school))};
 export const DisplayFlex = styled.div`
 display: flex;
 flex-wrap: wrap;
-padding: 30px 0 1.6rem 0;
+padding: 1.6vw 0 1.6rem 0;
 `
 
 export const SchoolContainer = styled.div`
