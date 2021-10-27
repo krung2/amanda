@@ -69,6 +69,7 @@ display: flex;
 align-items:center;
 justify-content: center;
 font-size: 1.3em;
+font-weight: 500;
 color: ${(props) => (checkSchoolSelect(props.school))};
 `
 

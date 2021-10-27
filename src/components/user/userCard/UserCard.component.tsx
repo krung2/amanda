@@ -1,12 +1,13 @@
 import React from "react";
 import * as S from './styles';
 import { ReactComponent as InstagramSVG } from '../../../assets/img/instagram.svg';
+import { ReactComponent as KakaoSVG } from '../../../assets/img/kakao.svg';
 import { ContentTypes } from "../../../libs/constants/contactTypes";
 import styled from "styled-components";
 import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import { checkSchoolSelect } from "../../../utils/CheckSchool";
 import { IUserCardProps } from "../../../libs/interfaces/IUserCardProps";
-import { checkDiscordType, checkKakaoType, checkSchoolType } from "../../../utils/checkType";
+import { checkDiscordType, checkSchoolType } from "../../../utils/checkType";
 import { userClick } from "../../../utils/userCardUtil";
 
 const UserCardComponent = (
@@ -31,6 +32,14 @@ const UserCardComponent = (
   } = cardInfo;
 
   const Instagram = styled(InstagramSVG) <{ school: SchoolConstant }>`
+  width: 20px;
+  height: 20px;
+  path {
+    fill: ${(props) => (checkSchoolSelect(props.school))}!important;
+  }
+  `
+
+  const Kakao = styled(KakaoSVG) <{ school: SchoolConstant }>`
   width: 20px;
   height: 20px;
   path {
@@ -85,7 +94,8 @@ const UserCardComponent = (
           <S.TeamContactContainer school={school} onClick={() => userClick(contactType, contact)}>
             {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType(school)} />}
             {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} />}
-            {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType(school)} />}
+            {/* {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType(school)} />} */}
+            {contactType === ContentTypes.KAKAOTALK && <Kakao school={school} />}
             <S.TeamContact school={school} fontLength={contact.length} >
               {contactType === ContentTypes.INSTAGRAM && '@'}{contact}
             </S.TeamContact>

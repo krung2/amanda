@@ -44,6 +44,7 @@ z-index: -1;
 export const UserPosition = styled.span<{ school: SchoolConstant }>`
 line-height: 24px;
 font-size: 1rem;
+font-weight: 500;
 color: ${(props) => (checkSchoolFont(props.school))};
 `
 
@@ -52,13 +53,21 @@ font-size: 24px;
 line-height: 36px;
 color: #191919;
 cursor: pointer;
+
+&:hover + span {
+  color: #3F3F3F;
+}
 `
 
 export const UserGithub = styled.span`
-font-size: 14px;
+font-size: 16px;
 line-height: 21px;
 color: #8D8D8D;
 cursor: pointer;
+
+&:hover {
+  color: #3F3F3F;
+}
 `
 
 export const TeamContainer = styled.div`
