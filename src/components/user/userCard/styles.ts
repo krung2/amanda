@@ -96,9 +96,10 @@ height: 20px;
 z-index: 0;
 `
 
-export const TeamContact = styled.div<{ school: SchoolConstant }>`
+export const TeamContact = styled.div<{ school: SchoolConstant, fontLength: number }>`
 font-size: 18px;
 color: ${(props) => (checkSchoolFont(props.school))};
+font-size: ${(props) => props.fontLength <= 10 ? '18' : 18 - (Math.ceil(props.fontLength / 4))}px;
 margin-left: 4px;
 line-height: 27px;
 `

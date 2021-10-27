@@ -86,7 +86,7 @@ const UserCardComponent = (
             {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType(school)} />}
             {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} />}
             {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType(school)} />}
-            <S.TeamContact school={school} >
+            <S.TeamContact school={school} fontLength={contact.length} >
               {contactType === ContentTypes.INSTAGRAM && '@'}{contact}
             </S.TeamContact>
           </S.TeamContactContainer>
