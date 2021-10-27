@@ -4,12 +4,14 @@
   font-weight: 300;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Gmarket Sans";
   src: local(''), url("../assets/fonts/GmarketSansTTFMedium.woff") format('woff');
   font-weight: 300;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Noto Sans CJK KR Midium";
   src: local(''), url("../assets/fonts/NotoSansCJKkr-Medium.woff") format('woff');
@@ -17,11 +19,9 @@
   font-style: normal;
 }
 
-
-/* 
 @font-face {
-  font-family: "Gmarket Sans TTF Medium";
-  src: local(''), url("../assets/fonts/GmarketSansTTFMedium.woff") format('woff');
-  font-weight: 300;
+  font-family: "paybooc OTF Medium";
+  src: local(''), url("../assets/fonts/paybooc OTF Medium.woff") format('woff');
+  font-weight: 500;
   font-style: normal;
-} */
+}

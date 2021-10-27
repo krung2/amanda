@@ -12,15 +12,17 @@ const HeaderComponent: React.FC = () => {
   return (
     <S.Header school={school}>
       <S.HeaderFrame>
-        <S.LogoName school={school}>Amanda</S.LogoName>
         <S.DisplayFlex>
-          <S.SiteMent>
-            <div>
-              우리 팀과 딱 맞는 팀들을 찾고있다면 <br />
-              <S.PointMent school={school}>아만다</S.PointMent>를 통해 원하는 <span> </span>
-              <S.PointMent school={school}>포지션별</S.PointMent>로 팀을 찾아보세요!
-            </div>
-          </S.SiteMent>
+          <div>
+            <S.LogoName school={school}>Amanda</S.LogoName>
+            <S.SiteMent>
+              <div>
+                우리 팀과 딱 맞는 팀들을 찾고있다면 <br />
+                <S.PointMent school={school}>아만다</S.PointMent>를 통해 원하는 <span> </span>
+                <S.PointMent school={school}>포지션별</S.PointMent>로 팀을 찾아보세요!
+              </div>
+            </S.SiteMent>
+          </div>
           <S.FlexBlank />
           <div>
             <S.CompleteMatch

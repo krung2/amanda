@@ -92,7 +92,7 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 padding: 4px 22px;
-width: 195px;
+/* width: 195px; */
 height: 32px;
 background: rgba(81, 135, 231, 0.1);
 background: ${(props) => (checkSchoolContact(props.school))};
@@ -136,22 +136,22 @@ z-index: 1;
 
 export const GwangjuCheckBox = styled(CheckBox)`
 display: ${(props) => props.teamCheck === TeamCheckType.NOTAPPLICABLE && 'none'};
-background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : 'white'};
-border: 1px solid ${SchoolColor.GWANGJU_BACK};
+background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : '#C4C4C4'};
+border: 1px solid ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : '#C4C4C4'};
 /* ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : 'white'}; */
 `
 
 export const DaeguCheckBox = styled(CheckBox)`
 display: ${(props) => props.teamCheck === TeamCheckType.NOTAPPLICABLE && 'none'};
-background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.DAEGU_BACK : 'white'};
-border: 1px solid ${SchoolColor.DAEGU_BACK};
+background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.DAEGU_BACK : '#C4C4C4'};
+border: 1px solid ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.DAEGU_BACK : '#C4C4C4'};
 /* ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : 'white'}; */
 `
 
 export const DaedeokCheckBox = styled(CheckBox)`
 display: ${(props) => props.teamCheck === TeamCheckType.NOTAPPLICABLE && 'none'};
-background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.DAEDEOK_BACK : 'white'};
-border: 1px solid ${SchoolColor.DAEDEOK_BACK};
+background-color: ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.DAEDEOK_BACK : '#C4C4C4'};
+border: 1px solid ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.DAEDEOK_BACK : '#C4C4C4'};
 /* ${(props) => props.teamCheck === TeamCheckType.HAVE ? SchoolColor.GWANGJU_BACK : 'white'}; */
 
 `

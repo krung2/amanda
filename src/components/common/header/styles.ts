@@ -3,7 +3,6 @@ import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import { checkSchoolBack, checkSchoolFont, checkSchoolHeader, checkSchoolSelect } from "../../../utils/CheckSchool";
 
 export const Header = styled.div<{ school: SchoolConstant }>`
-padding-top: 10px;
 width: 100%;
 background-color: ${(props) => (checkSchoolHeader(props.school))};
 justify-content: center;
@@ -20,14 +19,16 @@ font-size: 1.4rem;
 color: ${(props) => (checkSchoolFont(props.school))};
 color: ${(props) => (checkSchoolFont(props.school))};
 font-family: Gmarket Sans;
+line-height: 25px;
 `
 
 export const SiteMent = styled.div`
+margin-top: 19px;
 display: flex;
 align-items: center;
 color: #747474;
-font-size: 1.2rem;
-font-family: Gmarket Sans TTF;
+font-size: 1.3rem;
+font-family: paybooc OTF Medium;
 line-height: 39px;
 `
 
@@ -38,7 +39,7 @@ color: ${(props) => (checkSchoolFont(props.school))};
 export const DisplayFlex = styled.div`
 display: flex;
 flex-wrap: wrap;
-padding: 1.2vw 0 .9rem 0;
+padding: 30px 0 1.6rem 0;
 `
 
 export const SchoolContainer = styled.div`
@@ -99,6 +100,7 @@ justify-content: center;
 font-size: 18px;
 font-weight: 500;
 cursor: pointer;
+margin: 3px 0 10px 0;
 `
 
 export const CompleteArrow = styled.img`
