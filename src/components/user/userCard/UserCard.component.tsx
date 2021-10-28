@@ -67,7 +67,7 @@ const UserCardComponent = (
           <S.UserPosition school={school}>
             {position2}
           </S.UserPosition>
-          <S.UserName>
+          <S.UserName onClick={() => window.open(`https://github.com/${github2}`)}>
             {name2}
           </S.UserName>
           <S.UserGithub onClick={() => window.open(`https://github.com/${github2}`)}>
