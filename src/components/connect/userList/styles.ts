@@ -2,14 +2,17 @@ import styled from "styled-components";
 import { CardsContainer } from '../../user/styles';
 
 export const Container = styled.div`
-width: 70vw;
-margin-left: 12.5vw;
+width: 77vw;
+margin-left: 11.5vw;
 `
 
 export const ConnectContainer = styled(CardsContainer)`
+width: 77vw;
+flex-wrap: nowrap;
 align-items: center;
 gap: 5px !important;
 padding-top: 0px;
+flex: auto;
 `
 
 export const PlusCircle = styled.div`

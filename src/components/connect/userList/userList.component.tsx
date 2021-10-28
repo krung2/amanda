@@ -18,18 +18,21 @@ const ConnectUserListComponent = () => {
             isMatch: true,
             school: SchoolConstant.GWANGJU,
             ...connect.gwangju,
+            daeguTeam: false,
           }} />
           <S.PlusCircle><embed src={Plus} /></S.PlusCircle>
           <UserCardComponent key={connect.idx} cardInfo={{
             isMatch: true,
             school: SchoolConstant.DAEGU,
             ...connect.daegu,
+            gwangjuTeam: false,
           }} />
           <S.PlusCircle><embed src={Plus} /></S.PlusCircle>
           <UserCardComponent key={connect.idx} cardInfo={{
             isMatch: true,
             school: SchoolConstant.DAEDEOK,
             ...connect.daedoek,
+            daeguTeam: false,
           }} />
         </S.ConnectContainer>
       )

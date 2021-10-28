@@ -21,7 +21,7 @@ position: absolute;
 width: 100%;
 height: 100%;
 background-color: ${(props) => props.isAllMatch ? 'rgba(251, 251, 251, 0.7);' : ''};
-z-index: 10;
+z-index: ${(props) => props.isAllMatch ? '10' : '-10'};
 border-radius: 10px;
 `
 
