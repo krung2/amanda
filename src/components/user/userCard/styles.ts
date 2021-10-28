@@ -16,6 +16,15 @@ border-radius: 10px;
 z-index: -1;
 `
 
+export const IsMatchFilter = styled.div<{ isAllMatch: boolean }>`
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: ${(props) => props.isAllMatch ? 'rgba(251, 251, 251, 0.7);' : ''};
+z-index: 10;
+border-radius: 10px;
+`
+
 export const UserInfoContainer = styled.div`
 display: flex;
 height: 152px;

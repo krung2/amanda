@@ -47,8 +47,18 @@ const UserCardComponent = (
   }
   `
 
+  const isAllMatch = () => {
+    let cnt = 0;
+    if (daeguTeam) cnt++;
+    if (gwangjuTeam) cnt++;
+    if (daedoekTeam) cnt++;
+    if (cnt === 2) return true;
+    return false;
+  }
+
   return (
     <S.CardContainer isMatch={isMatch}>
+      <S.IsMatchFilter isAllMatch={isAllMatch()} />
       <S.UserInfoContainer>
         <S.UserInfo>
           <S.UserInfoBox>
