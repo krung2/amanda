@@ -4,14 +4,15 @@ import { SchoolConstant } from "../../../libs/constants/schoolConstant";
 import { TeamCheckType } from "../../../libs/constants/teamcheckType";
 import { checkSchoolContact, checkSchoolFont } from "../../../utils/CheckSchool";
 
-export const CardContainer = styled.div<{ isMatch: boolean }>`
+export const CardContainer = styled.div<{ isMatch: boolean, isAllMatch: boolean }>`
 position: relative;
 width: 24.5vw;
 min-width: 281px;
 height: ${(props) => (props.isMatch ? '230px' : '268px')};
 border: 1px solid #F3F3F3;
 box-sizing: border-box;
-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.2));
+background-color: ${(props) => (props.isAllMatch ? '#FBFBFB' : '')};
+filter: ${(props) => (props.isAllMatch ? '' : 'drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.2))')};
 border-radius: 10px;
 z-index: -1;
 `
@@ -50,21 +51,24 @@ width: 50%;
 z-index: -1;
 `
 
-export const UserPosition = styled.span<{ school: SchoolConstant }>`
+export const UserPosition = styled.span<{ school: SchoolConstant, isAllMatch: boolean }>`
 line-height: 24px;
 font-size: 1rem;
 font-weight: 500;
 color: ${(props) => (checkSchoolFont(props.school))};
+color: ${(props) => props.isAllMatch && '#E0E0E0 !important'};
 `
 
-export const UserName = styled.span`
+export const UserName = styled.span<{ isAllMatch: boolean }>`
 font-size: 24px;
 line-height: 36px;
 color: #191919;
 cursor: pointer;
+color: ${(props) => props.isAllMatch && '#C5C5C5 !important'};
 
 &:hover + span {
   color: #3F3F3F;
+  color: ${(props) => props.isAllMatch && '#E0E0E0 !important'};
 }
 `
 
@@ -88,13 +92,13 @@ flex-direction: column;
 overflow-x: hidden;
 `
 
-export const TeamIntro = styled.span<{ fontLength: number }>`
-/* font-size: 24px; */
+export const TeamIntro = styled.span<{ fontLength: number, isAllMatch: boolean }>`
 font-size: ${(props) => props.fontLength <= 10 ? '24' : 24 - (Math.ceil(props.fontLength / 4))}px;
 color: #636363;
+color: ${(props) => props.isAllMatch && '#C5C5C5 !important'};
 `
 
-export const TeamContactContainer = styled.div<{ school: SchoolConstant }>`
+export const TeamContactContainer = styled.div<{ school: SchoolConstant, isAllMatch: boolean }>`
 margin-top: 13px;
 display: flex;
 flex-direction: row;
@@ -103,8 +107,8 @@ justify-content: center;
 padding: 4px 22px;
 /* width: 195px; */
 height: 32px;
-background: rgba(81, 135, 231, 0.1);
 background: ${(props) => (checkSchoolContact(props.school))};
+background: ${(props) => props.isAllMatch && 'rgba(224, 224, 224, 0.1) !important'};
 border-radius: 30px;
 cursor: pointer;
 `
@@ -115,12 +119,13 @@ height: 20px;
 z-index: 0;
 `
 
-export const TeamContact = styled.div<{ school: SchoolConstant, fontLength: number }>`
+export const TeamContact = styled.div<{ school: SchoolConstant, fontLength: number, isAllMatch: boolean }>`
 font-size: 18px;
 color: ${(props) => (checkSchoolFont(props.school))};
 font-size: ${(props) => props.fontLength <= 10 ? '18' : 18 - (Math.ceil(props.fontLength / 4))}px;
 margin-left: 4px;
 line-height: 27px;
+color: ${(props) => props.isAllMatch && '#C5C5C5 !important'};
 `
 
 export const SchoolCheckBox = styled.div`

@@ -31,19 +31,19 @@ const UserCardComponent = (
     isMatch,
   } = cardInfo;
 
-  const Instagram = styled(InstagramSVG) <{ school: SchoolConstant }>`
+  const Instagram = styled(InstagramSVG) <{ school: SchoolConstant, isAllMatch: boolean }>`
   width: 20px;
   height: 20px;
   path {
-    fill: ${(props) => (checkSchoolSelect(props.school))}!important;
+    fill: ${(props) => props.isAllMatch ? '#E0E0E0' : (checkSchoolSelect(props.school))}!important;
   }
   `
 
-  const Kakao = styled(KakaoSVG) <{ school: SchoolConstant }>`
+  const Kakao = styled(KakaoSVG) <{ school: SchoolConstant, isAllMatch: boolean }>`
   width: 20px;
   height: 20px;
   path {
-    fill: ${(props) => (checkSchoolSelect(props.school))}!important;
+    fill: ${(props) => props.isAllMatch ? '#E0E0E0' : (checkSchoolSelect(props.school))}!important;
   }
   `
 
@@ -57,15 +57,16 @@ const UserCardComponent = (
   }
 
   return (
-    <S.CardContainer isMatch={isMatch}>
-      <S.IsMatchFilter isAllMatch={isAllMatch()} />
+    <S.CardContainer isMatch={isMatch} isAllMatch={isAllMatch()}>
       <S.UserInfoContainer>
         <S.UserInfo>
           <S.UserInfoBox>
-            <S.UserPosition school={school}>
+            <S.UserPosition school={school} isAllMatch={isAllMatch()}>
               {position1}
             </S.UserPosition>
-            <S.UserName onClick={() => window.open(`https://github.com/${github1}`)}>
+            <S.UserName
+              onClick={() => window.open(`https://github.com/${github1}`)}
+              isAllMatch={isAllMatch()}>
               {name1}
             </S.UserName>
             <S.UserGithub onClick={() => window.open(`https://github.com/${github1}`)}>
@@ -74,10 +75,13 @@ const UserCardComponent = (
           </S.UserInfoBox>
         </S.UserInfo>
         <S.UserInfo>
-          <S.UserPosition school={school}>
+          <S.UserPosition school={school} isAllMatch={isAllMatch()}>
             {position2}
           </S.UserPosition>
-          <S.UserName onClick={() => window.open(`https://github.com/${github2}`)}>
+          <S.UserName
+            onClick={() => window.open(`https://github.com/${github2}`)}
+            isAllMatch={isAllMatch()}
+          >
             {name2}
           </S.UserName>
           <S.UserGithub onClick={() => window.open(`https://github.com/${github2}`)}>
@@ -96,17 +100,25 @@ const UserCardComponent = (
         </S.SchoolCheckBox>
       </S.UserInfoContainer>
       <S.TeamContainer>
-        <S.TeamIntro fontLength={intro.length}>
+        <S.TeamIntro fontLength={intro.length} isAllMatch={isAllMatch()}>
           {intro}
         </S.TeamIntro>
         {
           !isMatch &&
-          <S.TeamContactContainer school={school} onClick={() => userClick(contactType, contact)}>
-            {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType(school)} />}
-            {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} />}
+          <S.TeamContactContainer
+            school={school}
+            onClick={() => userClick(contactType, contact)}
+            isAllMatch={isAllMatch()}
+          >
+            {contactType === ContentTypes.DISCORD && <S.TeamContactImg src={checkDiscordType(school, isAllMatch())} />}
+            {contactType === ContentTypes.INSTAGRAM && <Instagram school={school} isAllMatch={isAllMatch()} />}
             {/* {contactType === ContentTypes.KAKAOTALK && <S.TeamContactImg src={checkKakaoType(school)} />} */}
-            {contactType === ContentTypes.KAKAOTALK && <Kakao school={school} />}
-            <S.TeamContact school={school} fontLength={contact.length} >
+            {contactType === ContentTypes.KAKAOTALK && <Kakao school={school} isAllMatch={isAllMatch()} />}
+            <S.TeamContact
+              school={school}
+              fontLength={contact.length}
+              isAllMatch={isAllMatch()}
+            >
               {contactType === ContentTypes.INSTAGRAM && '@'}{contact}
             </S.TeamContact>
           </S.TeamContactContainer>
